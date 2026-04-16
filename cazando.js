@@ -11,6 +11,8 @@ let comidaX = 50;
 let comidaY = 50;
 const ANCHOCOMIDA = 30;
 const ALTURACOMIDA = 30;
+let btnIzquierda = document.getElementById("btnIzquierda");
+
 
 function graficarRectangulo(x, y, ancho, alto, color) {
  ctx.fillStyle = color;
@@ -18,7 +20,7 @@ function graficarRectangulo(x, y, ancho, alto, color) {
 };
 
 function graficarGato() {
- graficarRectangulo(gatoX, gatoY, ANCHOGATO, ALTURAGATO, "#3b3636");
+ graficarRectangulo(gatoX, gatoY, ANCHOGATO, ALTURAGATO, "git #868181");
 };
 
 function graficarComida() {
@@ -34,4 +36,37 @@ function iniciarJuego() {
  //ctx.clearRect(0, 0, canvas.width, canvas.height);
  graficarGato();
  graficarComida();
+}
+
+function limpiarCanvas(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function moverIzquierda(){
+    gatoX -= 10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+}
+
+function moverDerecha(){
+    gatoX += 10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+
+}
+
+function moverArriba(){
+    gatoY -= 10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+}
+
+function moverAbajo(){
+    gatoY += 10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
 }
