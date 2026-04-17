@@ -42,10 +42,10 @@ function iniciarJuego() {
  graficarComida();
 }
 
-document.getElementById("btnArriba").onclick = () => mover("arriba");
-document.getElementById("btnAbajo").onclick = () => mover("abajo");
-document.getElementById("btnIzquierda").onclick = () => mover("izquierda");
-document.getElementById("btnDerecha").onclick = () => mover("derecha");
+btnArriba.onclick = moverArriba;
+btnAbajo.onclick = moverAbajo;
+btnIzquierda.onclick = moverIzquierda;
+btnDerecha.onclick = moverDerecha;
 
 function limpiarCanvas(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -60,6 +60,7 @@ function moverIzquierda(){
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 function moverDerecha(){
@@ -67,6 +68,7 @@ function moverDerecha(){
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 
 }
 
@@ -75,6 +77,7 @@ function moverArriba(){
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 function moverAbajo(){
@@ -82,15 +85,16 @@ function moverAbajo(){
     limpiarCanvas();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
-function detectarColision() {
+function detectarColision(){
     if (
         gatoX < comidaX + ANCHOCOMIDA &&
         gatoX + ANCHOGATO > comidaX &&
         gatoY < comidaY + ALTURACOMIDA &&
         gatoY + ALTURAGATO > comidaY
-    ) {
-        alert("¡QUE RICOO! 😺🍋");
+    ){
+        alert("¡ESTUBO DELICIOSO! 🐱");
     }
 }
