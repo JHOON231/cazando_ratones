@@ -4,9 +4,11 @@ let btnArriba = document.getElementById("btnArriba");
 let btnIzquierda = document.getElementById("btnIzquierda");
 let btnAbajo = document.getElementById("btnAbajo");
 let btnDerecha = document.getElementById("btnDerecha");
+let btnReiniciar = document.getElementById("btnReiniciar");
 const VELOCIDAD = 15;
-let tiempo = 10;
+let tiempo = 50;
 let intervalo;
+let puntos = 0;
 
 // Gato
 let gatoX = 0;
@@ -40,6 +42,9 @@ function iniciarJuego() {
  comidaX = canvas.width - ANCHOCOMIDA;
  comidaY = canvas.height - ALTURACOMIDA;
  //ctx.clearRect(0, 0, canvas.width, canvas.height);
+  document.getElementById("puntos").textContent = puntos;
+  document.getElementById("tiempo").textContent = tiempo;
+ limpiarCanvas();
  graficarGato();
  graficarComida();
  intervalo = setInterval(restarTiempo, 1000);
@@ -49,6 +54,7 @@ btnArriba.onclick = moverArriba;
 btnAbajo.onclick = moverAbajo;
 btnIzquierda.onclick = moverIzquierda;
 btnDerecha.onclick = moverDerecha;
+btnReiniciar.onclick = reiniciarJuego;
 
 function limpiarCanvas(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -103,5 +109,40 @@ function detectarColision(){
         limpiarCanvas();
         graficarGato();
         graficarComida();
+        puntos++;
+        document.getElementById("puntos").textContent = puntos;
+        if (puntos >= 6){
+            clearInterval(intervalo);
+            alert("🏆 GANASTE");
+        }
     }
+}
+
+function restarTiempo(){
+    tiempo--;
+
+    document.getElementById("tiempo").textContent = tiempo;
+
+    if (tiempo <= 0){
+        clearInterval(intervalo);
+        alert("⏰ GAME OVER");
+    }
+}
+
+function reiniciarJuego(){
+
+    clearInterval(intervalo);
+
+    puntos;
+    tiempo;
+    gatoX = canvas.width / 2 - ANCHOGATO / 2;
+    gatoY = canvas.height / 2 - ALTURAGATO / 2;
+    comidaX = Math.random() * (canvas.width - ANCHOCOMIDA);
+    comidaY = Math.random() * (canvas.height - ALTURACOMIDA);
+    document.getElementById("puntos").textContent = puntos;
+    document.getElementById("tiempo").textContent = tiempo;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+    intervalo = setInterval(restarTiempo, 1000);
 }
