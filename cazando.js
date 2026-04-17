@@ -95,6 +95,10 @@ function detectarColision(){
         gatoY < comidaY + ALTURACOMIDA &&
         gatoY + ALTURAGATO > comidaY
     ){
-        alert("¡ESTUBO DELICIOSO! 🐱");
+        comidaX = Math.random() * (canvas.width - ANCHOCOMIDA);
+        comidaY = Math.random() * (canvas.height - ALTURACOMIDA);
+        limpiarCanvas();
+        graficarGato();
+        graficarComida();
     }
 }
