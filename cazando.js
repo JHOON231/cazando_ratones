@@ -1,5 +1,10 @@
 let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
+let btnArriba = document.getElementById("btnArriba");
+let btnIzquierda = document.getElementById("btnIzquierda");
+let btnAbajo = document.getElementById("btnAbajo");
+let btnDerecha = document.getElementById("btnDerecha");
+const VELOCIDAD = 15;
 
 // Gato
 let gatoX = 0;
@@ -11,7 +16,6 @@ let comidaX = 50;
 let comidaY = 50;
 const ANCHOCOMIDA = 30;
 const ALTURACOMIDA = 30;
-let btnIzquierda = document.getElementById("btnIzquierda");
 
 
 function graficarRectangulo(x, y, ancho, alto, color) {
@@ -20,7 +24,7 @@ function graficarRectangulo(x, y, ancho, alto, color) {
 };
 
 function graficarGato() {
- graficarRectangulo(gatoX, gatoY, ANCHOGATO, ALTURAGATO, "git #868181");
+ graficarRectangulo(gatoX, gatoY, ANCHOGATO, ALTURAGATO, "#969494");
 };
 
 function graficarComida() {
@@ -38,9 +42,18 @@ function iniciarJuego() {
  graficarComida();
 }
 
+document.getElementById("btnArriba").onclick = () => mover("arriba");
+document.getElementById("btnAbajo").onclick = () => mover("abajo");
+document.getElementById("btnIzquierda").onclick = () => mover("izquierda");
+document.getElementById("btnDerecha").onclick = () => mover("derecha");
+
 function limpiarCanvas(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+const LIMITE_X = canvas.width - ANCHOGATO;
+const LIMITE_Y = canvas.height - ALTURAGATO;
+
 
 function moverIzquierda(){
     gatoX -= 10;
@@ -69,4 +82,15 @@ function moverAbajo(){
     limpiarCanvas();
     graficarGato();
     graficarComida();
+}
+
+function detectarColision() {
+    if (
+        gatoX < comidaX + ANCHOCOMIDA &&
+        gatoX + ANCHOGATO > comidaX &&
+        gatoY < comidaY + ALTURACOMIDA &&
+        gatoY + ALTURAGATO > comidaY
+    ) {
+        alert("¡QUE RICOO! 😺🍋");
+    }
 }
