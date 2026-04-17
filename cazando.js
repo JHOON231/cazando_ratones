@@ -5,6 +5,8 @@ let btnIzquierda = document.getElementById("btnIzquierda");
 let btnAbajo = document.getElementById("btnAbajo");
 let btnDerecha = document.getElementById("btnDerecha");
 const VELOCIDAD = 15;
+let tiempo = 10;
+let intervalo;
 
 // Gato
 let gatoX = 0;
@@ -40,6 +42,7 @@ function iniciarJuego() {
  //ctx.clearRect(0, 0, canvas.width, canvas.height);
  graficarGato();
  graficarComida();
+ intervalo = setInterval(restarTiempo, 1000);
 }
 
 btnArriba.onclick = moverArriba;
