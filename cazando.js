@@ -65,7 +65,9 @@ const LIMITE_Y = canvas.height - ALTURAGATO;
 
 
 function moverIzquierda(){
-    gatoX -= 10;
+    if (gatoX > 0) { 
+        gatoX -= 10;
+    }
     limpiarCanvas();
     graficarGato();
     graficarComida();
@@ -73,7 +75,10 @@ function moverIzquierda(){
 }
 
 function moverDerecha(){
-    gatoX += 10;
+    if (gatoX < LIMITE_X) {
+        gatoX += 10;
+    }
+
     limpiarCanvas();
     graficarGato();
     graficarComida();
@@ -82,7 +87,9 @@ function moverDerecha(){
 }
 
 function moverArriba(){
-    gatoY -= 10;
+    if (gatoY > 0) { 
+        gatoY -= 10;
+    }
     limpiarCanvas();
     graficarGato();
     graficarComida();
@@ -90,7 +97,9 @@ function moverArriba(){
 }
 
 function moverAbajo(){
-    gatoY += 10;
+    if (gatoY < LIMITE_Y) {
+        gatoY += 10;
+    }
     limpiarCanvas();
     graficarGato();
     graficarComida();
