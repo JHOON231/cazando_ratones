@@ -1,0 +1,11 @@
+para esto quiero que tengas un rol, como un diseñador gráfico y desarrollador web experto en HTML y CSS.
+
+Quiero mejorar la interfaz gráfica de mi juego "Cazando" usando únicamente HTML y CSS, sin modificar el JavaScript.
+
+Haz que el diseño sea moderno, con fondo atractivo, botones llamativos y un contenedor centrado.
+
+Agrega un fondo con imagen y un efecto oscuro para que el contenido sea más visible.
+
+Mejora los botones con animaciones al pasar el mouse y un estilo más profesional.
+
+Dale un estilo gamer con efectos de brillo, sombras y diseño tipo glass.

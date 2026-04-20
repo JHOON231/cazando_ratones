@@ -154,4 +154,5 @@ function reiniciarJuego(){
     graficarGato();
     graficarComida();
     intervalo = setInterval(restarTiempo, 1000);
+    
 }
