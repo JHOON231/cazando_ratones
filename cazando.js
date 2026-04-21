@@ -11,6 +11,8 @@ let intervalo;
 let puntos = 0;
 let imgGato = new Image();
 imgGato.src = "gato.png";
+let imgRaton = new Image();
+imgRaton.src = "raton.png";
 
 // Gato
 let gatoX = 0;
@@ -34,8 +36,8 @@ function graficarGato() {
 }
 
 function graficarComida() {
- graficarRectangulo(comidaX, comidaY, ANCHOCOMIDA, ALTURACOMIDA, "#1a1903");
-};
+  ctx.drawImage(imgRaton, comidaX, comidaY, ANCHOCOMIDA, ALTURACOMIDA);
+}
 
 function iniciarJuego() {
  gatoX = (canvas.width / 2) - (ANCHOGATO / 2);
