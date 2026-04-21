@@ -143,7 +143,7 @@ function reiniciarJuego(){
     clearInterval(intervalo);
 
     puntos = 0;
-    tiempo = 15;
+    tiempo = 10;
     gatoX = canvas.width / 2 - ANCHOGATO / 2;
     gatoY = canvas.height / 2 - ALTURAGATO / 2;
     comidaX = Math.random() * (canvas.width - ANCHOCOMIDA);
