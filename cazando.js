@@ -6,7 +6,7 @@ let btnAbajo = document.getElementById("btnAbajo");
 let btnDerecha = document.getElementById("btnDerecha");
 let btnReiniciar = document.getElementById("btnReiniciar");
 const VELOCIDAD = 15;
-let tiempo = 50;
+let tiempo = 15;
 let intervalo;
 let puntos = 0;
 
@@ -142,8 +142,8 @@ function reiniciarJuego(){
 
     clearInterval(intervalo);
 
-    puntos;
-    tiempo;
+    puntos = 0;
+    tiempo = 15;
     gatoX = canvas.width / 2 - ANCHOGATO / 2;
     gatoY = canvas.height / 2 - ALTURAGATO / 2;
     comidaX = Math.random() * (canvas.width - ANCHOCOMIDA);
@@ -156,3 +156,4 @@ function reiniciarJuego(){
     intervalo = setInterval(restarTiempo, 1000);
     
 }
+ 
