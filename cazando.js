@@ -165,4 +165,4 @@ function aumentarVelocidad(){
     if(puntos == 1 || puntos == 4){
         tiempo = tiempo - 1;
     }
-}
+}    
