@@ -156,4 +156,9 @@ function reiniciarJuego(){
     intervalo = setInterval(restarTiempo, 1000);
     
 }
- 
+
+function aumentarVelocidad(){
+    if(puntos == 1 || puntos == 4){
+        tiempo = tiempo - 1;
+    }
+}
