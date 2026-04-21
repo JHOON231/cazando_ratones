@@ -9,6 +9,8 @@ const VELOCIDAD = 15;
 let tiempo = 15;
 let intervalo;
 let puntos = 0;
+let imgGato = new Image();
+imgGato.src = "gato.png";
 
 // Gato
 let gatoX = 0;
@@ -24,12 +26,12 @@ const ALTURACOMIDA = 30;
 
 function graficarRectangulo(x, y, ancho, alto, color) {
  ctx.fillStyle = color;
- ctx.fillRect(x, y, ancho, alto);
+ ctx.drawImage(x, y, ancho, alto);
 };
 
 function graficarGato() {
- graficarRectangulo(gatoX, gatoY, ANCHOGATO, ALTURAGATO, "#969494");
-};
+  ctx.drawImage(imgGato, gatoX, gatoY, ANCHOGATO, ALTURAGATO);
+}
 
 function graficarComida() {
  graficarRectangulo(comidaX, comidaY, ANCHOCOMIDA, ALTURACOMIDA, "#1a1903");
